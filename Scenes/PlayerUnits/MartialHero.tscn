@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
@@ -80,7 +80,7 @@ vframes = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
 anims/Skill1 = SubResource( 2 )
-anims/Skill2 = SubResource( 7 )
+anims/Skill2 = SubResource( 3 )
 anims/Skill3 = SubResource( 4 )
 anims/Skill4 = SubResource( 5 )
 anims/TakeDamage = SubResource( 6 )

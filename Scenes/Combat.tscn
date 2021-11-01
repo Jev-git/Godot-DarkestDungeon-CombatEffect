@@ -7,6 +7,8 @@
 [node name="CombatLoader" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
+[node name="FrameFreezer" type="Node2D" parent="."]
+
 [node name="PlayerUnits" type="Node2D" parent="." groups=[
 "PlayerUnits",
 ]]
