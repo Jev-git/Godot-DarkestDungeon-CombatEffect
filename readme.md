@@ -1,8 +1,9 @@
 # Doing
-* Create 4 player units and 4 enemy units with different assets
+* press space -> choose a random unit from both side -> perform the freeze frame on attack
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP
+* Freeze frame on attack
 * Positional and turn based combat:
     * 4 units on each side, turn order is randomed at the start of each combat
     * Able to choose a skill and deal damage to enemy team
@@ -10,7 +11,6 @@ Nov 1st - 19th (3 weeks)
     * Able to change position
     * Win/lose condition
     * Pop up and loop when finished
-* Freeze frame on attack
 # Optional
 * Traverse through linear dungeon
 * Stress damage
