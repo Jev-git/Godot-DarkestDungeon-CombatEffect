@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlueWitch.png-58da3f6d08e7148211b30c381f28b2ab.stex"
+path="res://.import/BlueWitch.png-13b5cc3a461f013496c2b83550e0931f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Heroes/BlueWitch.png"
-dest_files=[ "res://.import/BlueWitch.png-58da3f6d08e7148211b30c381f28b2ab.stex" ]
+source_file="res://Assets/PlayerUnits/BlueWitch.png"
+dest_files=[ "res://.import/BlueWitch.png-13b5cc3a461f013496c2b83550e0931f.stex" ]
 
 [params]
 
