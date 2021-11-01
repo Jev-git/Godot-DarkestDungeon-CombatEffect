@@ -3,10 +3,10 @@ extends Node2D
 var m_psUnit: PackedScene = preload("res://Scenes/PlayerUnits/BlueWitch.tscn")
 
 const PLAYER_UNIT_SCENES = [
+	preload("res://Scenes/PlayerUnits/MartialHero.tscn"),
 	preload("res://Scenes/PlayerUnits/BlueWitch.tscn"),
-	preload("res://Scenes/PlayerUnits/BlueWitch.tscn"),
-	preload("res://Scenes/PlayerUnits/BlueWitch.tscn"),
-	preload("res://Scenes/PlayerUnits/BlueWitch.tscn")
+	preload("res://Scenes/PlayerUnits/Huntress.tscn"),
+	preload("res://Scenes/PlayerUnits/Wizard.tscn")
 ]
 
 onready var m_nPlayerUnits: Node2D = get_tree().get_nodes_in_group("PlayerUnits")[0]
