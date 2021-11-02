@@ -4,7 +4,7 @@ const PLAYER_UNIT_SCENES = [
 	preload("res://Scenes/PlayerUnits/MartialHero.tscn"),
 	preload("res://Scenes/PlayerUnits/BlueWitch.tscn"),
 	preload("res://Scenes/PlayerUnits/Huntress.tscn"),
-	preload("res://Scenes/PlayerUnits/Wizard.tscn")
+	preload("res://Scenes/PlayerUnits/Wizard.tscn"),
 ]
 
 const ENEMY_UNIT_SCENES = [

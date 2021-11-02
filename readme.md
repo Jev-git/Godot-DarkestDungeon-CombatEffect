@@ -1,5 +1,15 @@
 # Doing
-* press space -> choose a random unit from both side -> perform the freeze frame on attack
+* Freeze frame attack:
+    * ~~Vignette effect~~
+    * ~~Only highlight the attacker and the receiver~~
+    * Zoom in
+    * Attacker animation (swing -> recovery)
+    * Receiver
+        * Bloodshed effect (optional?)
+        * Damage bubble
+    * Screen shake
+    * Screen tilt
+    * Reset
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP
