@@ -1,3 +1,3 @@
 extends Node
 
-const DISTANCE_BETWEEN_UNIT: int = 64
+const DISTANCE_BETWEEN_UNIT: int = 32
