@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var m_nPlayerUnits: Node2D = get_tree().get_nodes_in_group("PlayerUnits")[0]
-onready var m_nEnemyUnits: Node2D = get_tree().get_nodes_in_group("EnemyUnits")[0]
+onready var m_nPlayerTeam: Node2D = get_tree().get_nodes_in_group("PlayerTeam")[0]
+onready var m_nEnemyTeam: Node2D = get_tree().get_nodes_in_group("EnemyTeam")[0]
 
 onready var m_nVignette: TextureRect = $Vignette
 onready var m_nFreezeTimer: Timer = $Timer
@@ -23,11 +23,11 @@ func _input(event):
 				m_iFreezePlayerUnitIndex = randi() % 4
 				m_iFreezeEnemyUnitIndex = randi() % 4
 				
-				m_nFreezePlayerUnit = m_nPlayerUnits.get_child(m_iFreezePlayerUnitIndex)
-				m_nFreezeEnemyUnit = m_nEnemyUnits.get_child(m_iFreezeEnemyUnitIndex)
+				m_nFreezePlayerUnit = m_nPlayerTeam.get_child(m_iFreezePlayerUnitIndex)
+				m_nFreezeEnemyUnit = m_nEnemyTeam.get_child(m_iFreezeEnemyUnitIndex)
 				
-				m_nPlayerUnits.remove_child(m_nFreezePlayerUnit)
-				m_nEnemyUnits.remove_child(m_nFreezeEnemyUnit)
+				m_nPlayerTeam.remove_child(m_nFreezePlayerUnit)
+				m_nEnemyTeam.remove_child(m_nFreezeEnemyUnit)
 				
 				add_child(m_nFreezePlayerUnit)
 				add_child(m_nFreezeEnemyUnit)
@@ -35,10 +35,10 @@ func _input(event):
 				remove_child(m_nFreezePlayerUnit)
 				remove_child(m_nFreezeEnemyUnit)
 				
-				m_nPlayerUnits.add_child(m_nFreezePlayerUnit)
-				m_nPlayerUnits.move_child(m_nFreezePlayerUnit, m_iFreezePlayerUnitIndex)
-				m_nEnemyUnits.add_child(m_nFreezeEnemyUnit)
-				m_nEnemyUnits.move_child(m_nFreezeEnemyUnit, m_iFreezeEnemyUnitIndex)
+				m_nPlayerTeam.add_child(m_nFreezePlayerUnit)
+				m_nPlayerTeam.move_child(m_nFreezePlayerUnit, m_iFreezePlayerUnitIndex)
+				m_nEnemyTeam.add_child(m_nFreezeEnemyUnit)
+				m_nEnemyTeam.move_child(m_nFreezeEnemyUnit, m_iFreezeEnemyUnitIndex)
 				
 				m_nFreezePlayerUnit = null
 				m_nFreezeEnemyUnit = null
