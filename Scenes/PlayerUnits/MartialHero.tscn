@@ -72,7 +72,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -30.204 )
+position = Vector2( 1.38638, -20.8603 )
 texture = ExtResource( 2 )
 hframes = 10
 vframes = 2
