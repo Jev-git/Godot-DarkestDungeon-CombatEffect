@@ -1,6 +1,7 @@
 # Doing
 * Freeze frame attack:
-    * Move character only if the attack is melee
+    * Damage bubble
+    * Attack vfx that disappears after contact
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP

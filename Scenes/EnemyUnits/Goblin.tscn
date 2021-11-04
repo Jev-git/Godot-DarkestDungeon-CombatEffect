@@ -70,6 +70,7 @@ tracks/0/keys = {
 
 [node name="Goblin" type="Node2D"]
 script = ExtResource( 2 )
+m_bIsSkill1Melee = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 10.0472, -0.0113392 )

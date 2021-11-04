@@ -33,23 +33,25 @@ func move_in():
 	m_nFreezePlayerUnit.play_anim("Skill1")
 	m_nFreezeEnemyUnit.play_anim("TakeDamage")
 	
-	m_nTween.interpolate_property(m_nFreezePlayerUnit, "position",
-								m_nFreezePlayerUnit.position, Vector2.ZERO,
-								m_fMoveInDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-	m_nTween.interpolate_property(m_nFreezeEnemyUnit, "position",
-								m_nFreezeEnemyUnit.position, Vector2.ZERO,
-								m_fMoveInDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	if m_nFreezePlayerUnit.is_melee_skill("Skill1"):
+		m_nTween.interpolate_property(m_nFreezePlayerUnit, "position",
+									m_nFreezePlayerUnit.position, Vector2.ZERO,
+									m_fMoveInDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		m_nTween.interpolate_property(m_nFreezeEnemyUnit, "position",
+									m_nFreezeEnemyUnit.position, Vector2.ZERO,
+									m_fMoveInDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	m_nTween.start()
 func move_out():
 	m_nFreezePlayerUnit.set_z_index(0)
 	m_nFreezeEnemyUnit.set_z_index(0)
 	
-	m_nTween.interpolate_property(m_nFreezePlayerUnit, "position",
-								m_nFreezePlayerUnit.position, m_fFreezePlayerUnitOrigianlPos,
-								m_fMoveOutDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-	m_nTween.interpolate_property(m_nFreezeEnemyUnit, "position",
-								m_nFreezeEnemyUnit.position, m_fFreezeEnemyUnitOrigianlPos,
-								m_fMoveOutDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	if m_nFreezePlayerUnit.is_melee_skill("Skill1"):
+		m_nTween.interpolate_property(m_nFreezePlayerUnit, "position",
+									m_nFreezePlayerUnit.position, m_fFreezePlayerUnitOrigianlPos,
+									m_fMoveOutDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		m_nTween.interpolate_property(m_nFreezeEnemyUnit, "position",
+									m_nFreezeEnemyUnit.position, m_fFreezeEnemyUnitOrigianlPos,
+									m_fMoveOutDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	m_nTween.start()
 	
 	for nUnit in m_nPlayerTeam.get_children():

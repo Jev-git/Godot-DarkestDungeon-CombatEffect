@@ -70,6 +70,7 @@ tracks/0/keys = {
 
 [node name="Mushroom" type="Node2D"]
 script = ExtResource( 1 )
+m_bIsSkill1Melee = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 11.75, -0.204 )
