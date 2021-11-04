@@ -4,9 +4,9 @@ onready var m_nPlayerTeam: Team = get_tree().get_nodes_in_group("PlayerTeam")[0]
 onready var m_nEnemyTeam: Team = get_tree().get_nodes_in_group("EnemyTeam")[0]
 
 onready var m_nVignette: TextureRect = $Vignette
-onready var m_nZoomIn: Node2D = $Camera2D/ZoomIn
-onready var m_nScreenShake: Node2D = $Camera2D/ScreenShake
-onready var m_nScreenTilt: Node2D = $Camera2D/ScreenTilt
+onready var m_nCameraZoom: Node2D = $Camera2D/CameraZoom
+onready var m_nCameraShake: Node2D = $Camera2D/CameraShake
+onready var m_nCameraTilt: Node2D = $Camera2D/CameraTilt
 
 var m_iFreezePlayerUnitIndex: int
 var m_iFreezeEnemyUnitIndex: int
@@ -45,9 +45,9 @@ func _input(event):
 				for nUnit in m_nEnemyTeam.get_children():
 					nUnit.stop_anim()
 				
-				m_nZoomIn.zoom_in()
-				m_nScreenShake.shake()
-				m_nScreenTilt.tilt(true)
+				m_nCameraZoom.zoom_in()
+				m_nCameraShake.shake()
+				m_nCameraTilt.tilt(true)
 			else:
 				m_nFreezePlayerUnit.play_anim("Idle")
 				m_nFreezeEnemyUnit.play_anim("Idle")
@@ -66,8 +66,8 @@ func _input(event):
 				for nUnit in m_nEnemyTeam.get_children():
 					nUnit.resume_anim()
 				
-				m_nZoomIn.zoom_out()
-				m_nScreenTilt.reset()
+				m_nCameraZoom.zoom_out()
+				m_nCameraTilt.reset()
 				
 			m_bIsFreezing = !m_bIsFreezing
 			m_nVignette.visible = m_bIsFreezing

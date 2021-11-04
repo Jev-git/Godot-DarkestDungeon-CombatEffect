@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/CombatLoader.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/FrameFreezer.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/OnHitEffects.gd" type="Script" id=2]
 [ext_resource path="res://Assets/background.jpg" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Shaders/Vignette.shader" type="Shader" id=5]
 [ext_resource path="res://Assets/vignette.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Team.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/ScreenShake.gd" type="Script" id=8]
-[ext_resource path="res://Scripts/ScreenTilt.gd" type="Script" id=9]
-[ext_resource path="res://Scripts/ZoomIn.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/CameraShake.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/CameraTilt.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CameraZoom.gd" type="Script" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -41,12 +41,12 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 m_bIsOnTheRight = true
 
-[node name="FrameFreezer" type="Node2D" parent="."]
+[node name="OnHitEffects" type="Node2D" parent="."]
 position = Vector2( 320, 260 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Vignette" type="TextureRect" parent="FrameFreezer"]
+[node name="Vignette" type="TextureRect" parent="OnHitEffects"]
 visible = false
 material = SubResource( 1 )
 anchor_right = 1.0
@@ -63,17 +63,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="FrameFreezer"]
+[node name="Camera2D" type="Camera2D" parent="OnHitEffects"]
 position = Vector2( 0, -25 )
 rotating = true
 current = true
 
-[node name="ZoomIn" type="Node2D" parent="FrameFreezer/Camera2D"]
+[node name="CameraZoom" type="Node2D" parent="OnHitEffects/Camera2D"]
 script = ExtResource( 10 )
 
-[node name="Tween" type="Tween" parent="FrameFreezer/Camera2D/ZoomIn"]
+[node name="Tween" type="Tween" parent="OnHitEffects/Camera2D/CameraZoom"]
 
-[node name="ScreenShake" type="Node2D" parent="FrameFreezer/Camera2D"]
+[node name="CameraShake" type="Node2D" parent="OnHitEffects/Camera2D"]
 position = Vector2( 0, 50 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
@@ -81,12 +81,12 @@ m_fDuration = 0.1
 m_fFrequency = 50.0
 m_fAmplitude = 5.0
 
-[node name="Tween" type="Tween" parent="FrameFreezer/Camera2D/ScreenShake"]
+[node name="Tween" type="Tween" parent="OnHitEffects/Camera2D/CameraShake"]
 
-[node name="DurationTimer" type="Timer" parent="FrameFreezer/Camera2D/ScreenShake"]
+[node name="DurationTimer" type="Timer" parent="OnHitEffects/Camera2D/CameraShake"]
 one_shot = true
 
-[node name="FrequencyTimer" type="Timer" parent="FrameFreezer/Camera2D/ScreenShake"]
+[node name="FrequencyTimer" type="Timer" parent="OnHitEffects/Camera2D/CameraShake"]
 
-[node name="ScreenTilt" type="Node2D" parent="FrameFreezer/Camera2D"]
+[node name="CameraTilt" type="Node2D" parent="OnHitEffects/Camera2D"]
 script = ExtResource( 9 )
