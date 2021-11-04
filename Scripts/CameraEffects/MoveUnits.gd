@@ -6,7 +6,7 @@ export var m_fMoveOutDuration: float = 0.3
 onready var m_nPlayerTeam: Team = get_tree().get_nodes_in_group("PlayerTeam")[0]
 onready var m_nEnemyTeam: Team = get_tree().get_nodes_in_group("EnemyTeam")[0]
 
-onready var m_nTween: Tween = $Tween
+onready var m_nTween: Tween = get_parent().get_node("Tween")
 
 var m_nFreezePlayerUnit: Unit
 var m_nFreezeEnemyUnit: Unit
@@ -40,7 +40,6 @@ func move_in():
 								m_nFreezeEnemyUnit.position, Vector2.ZERO,
 								m_fMoveInDuration, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	m_nTween.start()
-
 func move_out():
 	m_nFreezePlayerUnit.set_z_index(0)
 	m_nFreezeEnemyUnit.set_z_index(0)

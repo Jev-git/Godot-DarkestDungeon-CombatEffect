@@ -1,14 +1,5 @@
 # Doing
 * Freeze frame attack:
-    * ~~Vignette effect~~
-    * ~~Only highlight the attacker and the receiver~~
-    * ~~Zoom in~~
-    * ~~Screen shake~~
-    * ~~Screen tilt~~
-    * ~~Screen pan~~
-    * ~~Move units~~
-    * ~~Automatic reset~~
-    * Reuse tween
     * Move character only if the attack is melee
 # Time range
 Nov 1st - 19th (3 weeks)

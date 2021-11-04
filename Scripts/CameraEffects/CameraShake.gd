@@ -6,7 +6,7 @@ export var m_fAmplitude: float = 16
 
 onready var m_nCamera: Camera2D = get_parent().get_parent().get_node("Camera2D")
 
-onready var m_nTween: Tween = $Tween
+onready var m_nTween: Tween = get_parent().get_node("Tween")
 onready var m_nDurationTimer: Timer = $DurationTimer
 onready var m_nFrequencyTimer: Timer = $FrequencyTimer
 

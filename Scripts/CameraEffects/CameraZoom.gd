@@ -6,7 +6,7 @@ export var m_fZoomOutDuration: float = 0.5
 
 onready var m_nCamera: Camera2D = get_parent().get_parent().get_node("Camera2D")
 
-onready var m_nTween: Tween = $Tween
+onready var m_nTween: Tween = get_parent().get_node("Tween")
 
 func zoom_in():
 	m_nTween.interpolate_property(m_nCamera, "zoom", Vector2(1, 1), m_fZoomFactor, m_fZoomInDuration,

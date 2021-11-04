@@ -6,7 +6,7 @@ onready var m_nPlayerTeam: Team = get_tree().get_nodes_in_group("PlayerTeam")[0]
 onready var m_nEnemyTeam: Team = get_tree().get_nodes_in_group("EnemyTeam")[0]
 
 onready var m_nVignette: TextureRect = $Vignette
-onready var m_nEffectTimer: Timer = $Timer
+onready var m_nEffectTimer: Timer = $EffectTimer
 
 onready var m_nMoveUnitsScript: Node2D = $Effects/MoveUnits
 onready var m_nCameraZoom: Node2D = $Effects/CameraZoom
