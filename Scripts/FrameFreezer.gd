@@ -5,13 +5,16 @@ onready var m_nEnemyTeam: Team = get_tree().get_nodes_in_group("EnemyTeam")[0]
 
 onready var m_nVignette: TextureRect = $Vignette
 onready var m_nFreezeTimer: Timer = $Timer
+onready var m_nCamera: Camera2D = $Camera2D
+onready var m_nTween: Tween = $Tween
+onready var m_nScreenShake: Node2D = $Camera2D/ScreenShake
 
 var m_iFreezePlayerUnitIndex: int
 var m_iFreezeEnemyUnitIndex: int
 var m_nFreezePlayerUnit: Unit
 var m_nFreezeEnemyUnit: Unit
 
-onready var m_bIsFreezing: bool = false # This one is for DEBUG only
+onready var m_bIsFreezing: bool = false
 
 func _ready():
 	randomize()
@@ -37,6 +40,15 @@ func _input(event):
 				
 				m_nFreezePlayerUnit.play_anim("Skill1")
 				m_nFreezeEnemyUnit.play_anim("TakeDamage")
+				
+				for nUnit in m_nPlayerTeam.get_children():
+					nUnit.stop_anim()
+				for nUnit in m_nEnemyTeam.get_children():
+					nUnit.stop_anim()
+				
+				m_nCamera.zoom = Vector2(0.8, 0.8)
+				
+				m_nScreenShake.shake()
 			else:
 				m_nFreezePlayerUnit.play_anim("Idle")
 				m_nFreezeEnemyUnit.play_anim("Idle")
@@ -49,6 +61,13 @@ func _input(event):
 				
 				m_nFreezePlayerUnit = null
 				m_nFreezeEnemyUnit = null
+				
+				for nUnit in m_nPlayerTeam.get_children():
+					nUnit.resume_anim()
+				for nUnit in m_nEnemyTeam.get_children():
+					nUnit.resume_anim()
+				
+				m_nCamera.zoom = Vector2(1, 1)
 				
 			m_bIsFreezing = !m_bIsFreezing
 			m_nVignette.visible = m_bIsFreezing

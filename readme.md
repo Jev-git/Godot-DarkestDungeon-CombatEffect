@@ -2,14 +2,10 @@
 * Freeze frame attack:
     * ~~Vignette effect~~
     * ~~Only highlight the attacker and the receiver~~
-    * Zoom in
-    * Attacker animation (swing -> recovery)
-    * Receiver
-        * Bloodshed effect (optional?)
-        * Damage bubble
-    * Screen shake
+    * ~~Zoom in~~
+    * ~~Screen shake~~
     * Screen tilt
-    * Reset
+    * Tween
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP

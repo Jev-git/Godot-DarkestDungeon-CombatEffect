@@ -8,3 +8,9 @@ func _ready():
 
 func play_anim(_sAnimName: String):
 	m_nAnimPlayer.play(_sAnimName)
+
+func stop_anim():
+	m_nAnimPlayer.stop()
+
+func resume_anim():
+	m_nAnimPlayer.play("Idle")
