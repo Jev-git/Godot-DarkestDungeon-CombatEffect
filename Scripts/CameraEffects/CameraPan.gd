@@ -2,7 +2,7 @@ extends Node2D
 
 export var m_fPanSpeed: float = 10
 
-onready var m_nCamera: Camera2D = get_parent()
+onready var m_nCamera: Camera2D = get_parent().get_parent().get_node("Camera2D")
 
 onready var m_bIsPanning: bool = false
 onready var m_bIsPanningToTheRight: bool = true

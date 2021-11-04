@@ -8,11 +8,11 @@ onready var m_nEnemyTeam: Team = get_tree().get_nodes_in_group("EnemyTeam")[0]
 onready var m_nVignette: TextureRect = $Vignette
 onready var m_nEffectTimer: Timer = $Timer
 
-onready var m_nMoveUnitsScript: Node2D = $MoveUnits
-onready var m_nCameraZoom: Node2D = $Camera2D/CameraZoom
-onready var m_nCameraShake: Node2D = $Camera2D/CameraShake
-onready var m_nCameraTilt: Node2D = $Camera2D/CameraTilt
-onready var m_nCameraPan: Node2D = $Camera2D/CameraPan
+onready var m_nMoveUnitsScript: Node2D = $Effects/MoveUnits
+onready var m_nCameraZoom: Node2D = $Effects/CameraZoom
+onready var m_nCameraShake: Node2D = $Effects/CameraShake
+onready var m_nCameraTilt: Node2D = $Effects/CameraTilt
+onready var m_nCameraPan: Node2D = $Effects/CameraPan
 
 onready var m_bIsFreezing: bool = false
 

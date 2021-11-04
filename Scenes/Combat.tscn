@@ -65,41 +65,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MoveUnits" type="Node2D" parent="OnHitEffects"]
-script = ExtResource( 12 )
-
-[node name="Tween" type="Tween" parent="OnHitEffects/MoveUnits"]
-
 [node name="Camera2D" type="Camera2D" parent="OnHitEffects"]
 position = Vector2( 0, -25 )
 rotating = true
 current = true
 
-[node name="CameraZoom" type="Node2D" parent="OnHitEffects/Camera2D"]
+[node name="Timer" type="Timer" parent="OnHitEffects"]
+one_shot = true
+
+[node name="Effects" type="Node2D" parent="OnHitEffects"]
+
+[node name="MoveUnits" type="Node2D" parent="OnHitEffects/Effects"]
+script = ExtResource( 12 )
+
+[node name="Tween" type="Tween" parent="OnHitEffects/Effects/MoveUnits"]
+
+[node name="CameraZoom" type="Node2D" parent="OnHitEffects/Effects"]
+position = Vector2( 0, -25 )
 script = ExtResource( 10 )
 
-[node name="Tween" type="Tween" parent="OnHitEffects/Camera2D/CameraZoom"]
+[node name="Tween" type="Tween" parent="OnHitEffects/Effects/CameraZoom"]
 
-[node name="CameraShake" type="Node2D" parent="OnHitEffects/Camera2D"]
-position = Vector2( 0, 50 )
+[node name="CameraShake" type="Node2D" parent="OnHitEffects/Effects"]
+position = Vector2( 0, 25 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
 m_fDuration = 0.1
 m_fFrequency = 50.0
 m_fAmplitude = 5.0
 
-[node name="Tween" type="Tween" parent="OnHitEffects/Camera2D/CameraShake"]
+[node name="Tween" type="Tween" parent="OnHitEffects/Effects/CameraShake"]
 
-[node name="DurationTimer" type="Timer" parent="OnHitEffects/Camera2D/CameraShake"]
+[node name="DurationTimer" type="Timer" parent="OnHitEffects/Effects/CameraShake"]
 one_shot = true
 
-[node name="FrequencyTimer" type="Timer" parent="OnHitEffects/Camera2D/CameraShake"]
+[node name="FrequencyTimer" type="Timer" parent="OnHitEffects/Effects/CameraShake"]
 
-[node name="CameraTilt" type="Node2D" parent="OnHitEffects/Camera2D"]
+[node name="CameraTilt" type="Node2D" parent="OnHitEffects/Effects"]
+position = Vector2( 0, -25 )
 script = ExtResource( 9 )
 
-[node name="CameraPan" type="Node2D" parent="OnHitEffects/Camera2D"]
+[node name="CameraPan" type="Node2D" parent="OnHitEffects/Effects"]
+position = Vector2( 0, -25 )
 script = ExtResource( 11 )
-
-[node name="Timer" type="Timer" parent="OnHitEffects"]
-one_shot = true

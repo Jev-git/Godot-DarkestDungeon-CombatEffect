@@ -4,7 +4,7 @@ export var m_fZoomFactor: Vector2 = Vector2(0.8, 0.8)
 export var m_fZoomInDuration: float = 0.1
 export var m_fZoomOutDuration: float = 0.5
 
-onready var m_nCamera: Camera2D = get_parent()
+onready var m_nCamera: Camera2D = get_parent().get_parent().get_node("Camera2D")
 
 onready var m_nTween: Tween = $Tween
 
