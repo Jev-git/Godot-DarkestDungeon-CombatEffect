@@ -4,8 +4,8 @@
     * ~~Only highlight the attacker and the receiver~~
     * ~~Zoom in~~
     * ~~Screen shake~~
-    * Screen tilt
-    * Tween
+    * ~~Screen tilt~~
+    * Screen pan
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP

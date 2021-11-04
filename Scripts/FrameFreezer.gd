@@ -8,6 +8,7 @@ onready var m_nFreezeTimer: Timer = $Timer
 onready var m_nCamera: Camera2D = $Camera2D
 onready var m_nTween: Tween = $Tween
 onready var m_nScreenShake: Node2D = $Camera2D/ScreenShake
+onready var m_nScreenTilt: Node2D = $Camera2D/ScreenTilt
 
 var m_iFreezePlayerUnitIndex: int
 var m_iFreezeEnemyUnitIndex: int
@@ -49,6 +50,7 @@ func _input(event):
 				m_nCamera.zoom = Vector2(0.8, 0.8)
 				
 				m_nScreenShake.shake()
+				m_nScreenTilt.tilt(true)
 			else:
 				m_nFreezePlayerUnit.play_anim("Idle")
 				m_nFreezeEnemyUnit.play_anim("Idle")
@@ -68,6 +70,7 @@ func _input(event):
 					nUnit.resume_anim()
 				
 				m_nCamera.zoom = Vector2(1, 1)
+				m_nScreenTilt.reset()
 				
 			m_bIsFreezing = !m_bIsFreezing
 			m_nVignette.visible = m_bIsFreezing
