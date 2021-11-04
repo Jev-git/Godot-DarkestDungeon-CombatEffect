@@ -5,7 +5,9 @@
     * ~~Zoom in~~
     * ~~Screen shake~~
     * ~~Screen tilt~~
-    * Screen pan
+    * ~~Screen pan~~
+    * ~~Move units~~
+    * Reuse tween and automatic reset
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP

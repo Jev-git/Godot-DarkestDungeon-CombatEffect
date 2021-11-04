@@ -1,15 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/CombatLoader.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/OnHitEffects.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/CameraEffects/OnHitEffects.gd" type="Script" id=2]
 [ext_resource path="res://Assets/background.jpg" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Shaders/Vignette.shader" type="Shader" id=5]
 [ext_resource path="res://Assets/vignette.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Team.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/CameraShake.gd" type="Script" id=8]
-[ext_resource path="res://Scripts/CameraTilt.gd" type="Script" id=9]
-[ext_resource path="res://Scripts/CameraZoom.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/CameraEffects/CameraShake.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/CameraEffects/CameraTilt.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CameraEffects/CameraZoom.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/CameraEffects/CameraPan.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/CameraEffects/MoveUnits.gd" type="Script" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -63,6 +65,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MoveUnits" type="Node2D" parent="OnHitEffects"]
+script = ExtResource( 12 )
+
+[node name="Tween" type="Tween" parent="OnHitEffects/MoveUnits"]
+
 [node name="Camera2D" type="Camera2D" parent="OnHitEffects"]
 position = Vector2( 0, -25 )
 rotating = true
@@ -90,3 +97,6 @@ one_shot = true
 
 [node name="CameraTilt" type="Node2D" parent="OnHitEffects/Camera2D"]
 script = ExtResource( 9 )
+
+[node name="CameraPan" type="Node2D" parent="OnHitEffects/Camera2D"]
+script = ExtResource( 11 )

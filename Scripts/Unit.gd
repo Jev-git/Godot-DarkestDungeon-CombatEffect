@@ -11,6 +11,3 @@ func play_anim(_sAnimName: String):
 
 func stop_anim():
 	m_nAnimPlayer.stop()
-
-func resume_anim():
-	m_nAnimPlayer.play("Idle")
