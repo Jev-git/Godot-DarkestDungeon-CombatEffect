@@ -100,3 +100,6 @@ script = ExtResource( 9 )
 
 [node name="CameraPan" type="Node2D" parent="OnHitEffects/Camera2D"]
 script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="OnHitEffects"]
+one_shot = true

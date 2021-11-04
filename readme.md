@@ -7,7 +7,9 @@
     * ~~Screen tilt~~
     * ~~Screen pan~~
     * ~~Move units~~
-    * Reuse tween and automatic reset
+    * ~~Automatic reset~~
+    * Reuse tween
+    * Move character only if the attack is melee
 # Time range
 Nov 1st - 19th (3 weeks)
 # MVP
