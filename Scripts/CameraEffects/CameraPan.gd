@@ -17,4 +17,4 @@ func stop():
 
 func _process(delta):
 	if m_bIsPanning:
-		m_nCamera.offset.x += delta * m_fPanSpeed * 1 if m_bIsPanningToTheRight else -1
+		m_nCamera.offset.x += delta * m_fPanSpeed * (1 if m_bIsPanningToTheRight else -1)

@@ -23,11 +23,13 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_accept"):
 			if !m_bIsFreezing:
-				m_nMoveUnitsScript.move_in()
+				var bIsPlayerAttacking: bool = true if randf() > 0.5 else false
+				
+				m_nMoveUnitsScript.move_in(bIsPlayerAttacking)
 				m_nCameraZoom.zoom_in()
 				m_nCameraShake.shake()
-				m_nCameraTilt.tilt(true)
-				m_nCameraPan.start(true)
+				m_nCameraTilt.tilt(bIsPlayerAttacking)
+				m_nCameraPan.start(bIsPlayerAttacking)
 				
 				m_bIsFreezing = true
 				m_nVignette.visible = true
